@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <title>portfolio</title>
+
+<body>
+
+    <header>
+        <!------------------ 메뉴 ------------------>
+        <nav class="flexBox">
+            <div class="tab flexBox">
+                <div class="logo flexBox">LOGO</div>
+                <ul class="menu">
+                    <li class="list">
+                        <a>빨간색</a>
+                        <ul class="listMenu1">
+                            <li><a>빨강이</a></li>
+                            <li><a>빨강이</a></li>
+                            <li><a>빨강이</a></li>
+                            <li><a>빨강이</a></li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <a>노란색</a>
+                        <ul class="listMenu2">
+                            <li><a>노랭이</a></li>
+                            <li><a>노랭이</a></li>
+                            <li><a>노랭이</a></li>
+                            <li><a>노랭이</a></li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <a>초록색</a>
+                        <ul class="listMenu3">
+                            <li><a>초롱이</a></li>
+                            <li><a>초롱이</a></li>
+                            <li><a>초롱이</a></li>
+                            <li><a>초롱이</a></li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <a>파란색</a>
+                        <ul class="listMenu3">
+                            <li><a>파랭이</a></li>
+                            <li><a>파랭이</a></li>
+                            <li><a>파랭이</a></li>
+                            <li><a>파랭이</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_bg"></div>
+        </nav>
+    </header>
+
+    <!------------------ 메인슬라이드 ------------------>
+    <main class="visual">
+        <div class="slideBox">
+            <ul class="slideMoveBox">
+                <li class="slide_1">
+                    <div class="textBox active">
+                        <h2>빨간색</h2>
+                        <p>안녕! 여긴 빨간색이야.</p>
+                    </div>
+                </li>
+                <li class="slide_2">
+                    <div class="textBox">
+                        <h2>노란색</h2>
+                        <p>안녕! 여긴 노란색이야.</p>
+                    </div>
+                </li>
+                <li class="slide_3">
+                    <div class="textBox">
+                        <h2>초록색</h2>
+                        <p>안녕! 여긴 초록색이야.</p>
+                    </div>
+                </li>
+                <li class="slide_4">
+                    <div class="textBox">
+                        <h2>파란색</h2>
+                        <p>안녕! 여긴 파란색이야.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="controlsBox">
+            <div class="pageBox flexBox">
+                <span>01</span>
+                <div class="loadingBox">
+                    <div class="loadingBar"></div>
+                </div>
+                <span>04</span>
+            </div>
+            <button class="flexBox prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="flexBox nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <!------------------ 소개 ------------------>
+    <section class="section01">
+        <div class="content">
+            <div class="contentSlideTitleBox flexBox">
+                <p class="contentSlideTitle">INTRODUCE</p>
+            </div>
+            <div class="contentClickMenu flexBox">
+                <button class="choice allBtn">전체</button>
+                <button class="redBtn" data-color="red">빨간색</button>
+                <button class="yellowBtn" data-color="yellow">노란색</button>
+                <button class="greenBtn" data-color="green">초록색</button>
+                <button class="blueBtn" data-color="blue">파란색</button>
+            </div>
+            <div class="contentSlideBox">
+                <div class="contentMoveSlideBox">
+                    <!-- 빨간색 -->
+                    <div class="red flexBox">
+                        <div class="colorImg"></div>
+                        <h5>빨간색1</h5>
+                        <p>하얀색8 : 빨간색2</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="1">상세보기</button>
+                            <button class="checkBtn" data-number="1">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="red flexBox">
+                        <div class="colorImg"></div>
+                        <h5>빨간색2</h5>
+                        <p>하얀색7 : 빨간색3</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="2">상세보기</button>
+                            <button class="checkBtn" data-number="2">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="red flexBox">
+                        <div class="colorImg"></div>
+                        <h5>빨간색3</h5>
+                        <p>하얀색5 : 빨간색5</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="3">상세보기</button>
+                            <button class="checkBtn" data-number="3">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="red flexBox">
+                        <div class="colorImg"></div>
+                        <h5>빨간색4</h5>
+                        <p>하얀색4 : 빨간색6</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="4">상세보기</button>
+                            <button class="checkBtn" data-number="4">확인하기</button>
+                        </div>
+                    </div>
+                    <!-- 노란색 -->
+                    <div class="yellow flexBox">
+                        <div class="colorImg"></div>
+                        <h5>노란색1</h5>
+                        <p>하얀색7 : 노란색3</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="5">상세보기</button>
+                            <button class="checkBtn" data-number="5">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="yellow flexBox">
+                        <div class="colorImg"></div>
+                        <h5>노란색2</h5>
+                        <p>하얀색6 : 노란색4</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="6">상세보기</button>
+                            <button class="checkBtn" data-number="6">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="yellow flexBox">
+                        <div class="colorImg"></div>
+                        <h5>노란색3</h5>
+                        <p>하얀색5 : 노란색5</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="7">상세보기</button>
+                            <button class="checkBtn" data-number="7">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="yellow flexBox">
+                        <div class="colorImg"></div>
+                        <h5>노란색4</h5>
+                        <p>하얀색3 : 노란색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="8">상세보기</button>
+                            <button class="checkBtn" data-number="8">확인하기</button>
+                        </div>
+                    </div>
+                    <!-- 초록색 -->
+                    <div class="green flexBox">
+                        <div class="colorImg"></div>
+                        <h5>초록색1</h5>
+                        <p>하얀색3 : 초록색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="9">상세보기</button>
+                            <button class="checkBtn" data-number="9">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="green flexBox">
+                        <div class="colorImg"></div>
+                        <h5>초록색2</h5>
+                        <p>하얀색3 : 초록색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="10">상세보기</button>
+                            <button class="checkBtn" data-number="10">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="green flexBox">
+                        <div class="colorImg"></div>
+                        <h5>초록색3</h5>
+                        <p>하얀색3 : 초록색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="11">상세보기</button>
+                            <button class="checkBtn" data-number="11">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="green flexBox">
+                        <div class="colorImg"></div>
+                        <h5>초록색4</h5>
+                        <p>하얀색3 : 초록색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="12">상세보기</button>
+                            <button class="checkBtn" data-number="12">확인하기</button>
+                        </div>
+                    </div>
+                    <!-- 파란색 -->
+                    <div class="blue flexBox">
+                        <div class="colorImg"></div>
+                        <h5>파란색1</h5>
+                        <p>하얀색3 : 파란색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="13">상세보기</button>
+                            <button class="checkBtn" data-number="13">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="blue flexBox">
+                        <div class="colorImg"></div>
+                        <h5>파란색2</h5>
+                        <p>하얀색3 : 파란색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="14">상세보기</button>
+                            <button class="checkBtn" data-number="14">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="blue flexBox">
+                        <div class="colorImg"></div>
+                        <h5>파란색3</h5>
+                        <p>하얀색3 : 파란색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="15">상세보기</button>
+                            <button class="checkBtn" data-number="15">확인하기</button>
+                        </div>
+                    </div>
+                    <div class="blue flexBox">
+                        <div class="colorImg"></div>
+                        <h5>파란색4</h5>
+                        <p>하얀색3 : 파란색7</p>
+                        <div class="choiceBox">
+                            <button class="detailBtn" data-number="16">상세보기</button>
+                            <button class="checkBtn" data-number="16">확인하기</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="contentBtnLeft"></button>
+                <button class="contentBtnRight able"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="productWrap">
+        <div class="productBox">
+            <ul class="productColor">
+                <li>
+                    <a>
+                        <ul class="productMenuImg">
+                            <li class="productRed"><img src="./img/red_macaron01.png" alt="red_macaron"></li>
+                            <li class="productRed"><img src="./img/red_macaron02.png" alt="red_macaron"></li>
+                            <li class="productRed"><img src="./img/red_macaron03.png" alt="red_macaron"></li>
+                        </ul>
+                        <div class="productImg_Red">
+                            <img src="./img/red_macaron00.png" alt="red_macaron">
+                            <p>
+                                <span>빨간색</span><br>
+                                마카롱 모아보기<br>
+                                <span class="num flexBox">5</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <ul class="productMenuImg">
+                            <li class="productYellow"><img src="./img/yellow_macaron01.png" alt="yellow_macaron"></li>
+                            <li class="productYellow"><img src="./img/yellow_macaron02.png" alt="yellow_macaron"></li>
+                            <li class="productYellow"><img src="./img/yellow_macaron03.png" alt="yellow_macaron"></li>
+                        </ul>
+                        <div class="productImg_Yellow">
+                            <img src="./img/yellow_macaron00.png" alt="yellow_macaron">
+                            <p>
+                                <span>노란색</span><br>
+                                마카롱 모아보기<br>
+                                <span class="num flexBox">3</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <ul class="productMenuImg">
+                            <li class="productGreen"><img src="./img/green_macaron01.png" alt="green_macaron"></li>
+                            <li class="productGreen"><img src="./img/green_macaron03.png" alt="green_macaron"></li>
+                            <li class="productGreen"><img src="./img/green_macaron02.png" alt="green_macaron"></li>
+                        </ul>
+                        <div class="productImg_Green">
+                            <img src="./img/green_macaron00.png" alt="green_macaron">
+                            <p>
+                                <span>초록색</span><br>
+                                마카롱 모아보기<br>
+                                <span class="num flexBox">6</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <ul class="productMenuImg">
+                            <li class="productBlue"><img src="./img/blue_macaron01.png" alt="blue_macaron"></li>
+                            <li class="productBlue"><img src="./img/blue_macaron02.png" alt="blue_macaron"></li>
+                            <li class="productBlue"><img src="./img/blue_macaron03.png" alt="blue_macaron"></li>
+                        </ul>
+                        <div class="productImg_Blue">
+                            <img src="./img/blue_macaron00.png" alt="blue_macaron">
+                            <p><span>파란색</span><br>
+                                마카롱 모아보기<br>
+                                <span class="num flexBox">4</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <img class="characterImg" src="./img/macaronImg.png" alt="character">
+            <div class="bannerBar alignFlexBox">
+                <img src="./img/bannerImg.png" alt="banner">
+                <p>나만의 요리를 올려주세요!</p>
+                <button>작성하기 <i class="fas fa-pen"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner">
+            <div class="footerLeft">
+                <ul class="footerLink">
+                    <li><a href="">빨간색 담당</a></li>
+                    <li><a href="">노란색 담당</a></li>
+                    <li><a href="">초록색 담당</a></li>
+                    <li><a href="">파란색 담당</a></li>
+                </ul>
+                <ul class="footerInfo alignFlexBox">
+                    <li class="alignFlexBox">혜자(주)</li>
+                    <li>서울시 도봉구</li>
+                </ul>
+            </div>
+            <div class="footerRight">
+                <ul>
+                    <li class="iconCamera flexBox"><a href=""><i class="fas fa-camera"></i></a></li>
+                    <li class="iconTalk flexBox"><a href=""><i class="fas fa-comment-dots"></i></a></li>
+                    <li class="siteMap">
+                        <div class="siteList">
+                            <ul>
+                                <li><a href="">빨강이</a></li>
+                                <li><a href="">노랑이</a></li>
+                                <li><a href="">초록이</a></li>
+                                <li><a href="">파랑이</a></li>
+                            </ul>
+                        </div>
+                        <button>
+                            <p>관련사이트</p>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </footer>
+
+        <div class="modal">
+        <div class="detailBox">
+            <p class="modalTitle">상세보기</p>
+            <div class="detail_1">
+                <h4>빨간색1</h4>
+            </div>
+            <div class="detail_2">
+                <h4>빨간색2</h4>
+            </div>
+            <div class="detail_3">
+                <h4>빨간색3</h4>
+            </div>
+            <div class="detail_4">
+                <h4>빨간색4</h4>
+            </div>
+            <div class="detail_5">
+                <h4>노란색1</h4>
+            </div>
+            <div class="detail_6">
+                <h4>노란색2</h4>
+            </div>
+            <div class="detail_7">
+                <h4>노란색3</h4>
+            </div>
+            <div class="detail_8">
+                <h4>노란색4</h4>
+            </div>
+            <div class="detail_9">
+                <h4>초록색1</h4>
+            </div>
+            <div class="detail_10">
+                <h4>초록색2</h4>
+            </div>
+            <div class="detail_11">
+                <h4>초록색3</h4>
+            </div>
+            <div class="detail_12">
+                <h4>초록색4</h4>
+            </div>
+            <div class="detail_13">
+                <h4>파란색1</h4>
+            </div>
+            <div class="detail_14">
+                <h4>파란색2</h4>
+            </div>
+            <div class="detail_15">
+                <h4>파란색3</h4>
+            </div>
+            <div class="detail_16">
+                <h4>파란색4</h4>
+            </div>
+            <button class="modal_x flexBox"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="checkBox">
+            <p class="modalTitle">확인하기</p>
+            <div class="check_1">
+                <h4>빨간색1</h4>
+            </div>
+            <div class="check_2">
+                <h4>빨간색2</h4>
+            </div>
+            <div class="check_3">
+                <h4>빨간색3</h4>
+            </div>
+            <div class="check_4">
+                <h4>빨간색4</h4>
+            </div>
+            <div class="check_5">
+                <h4>노란색1</h4>
+            </div>
+            <div class="check_6">
+                <h4>노란색2</h4>
+            </div>
+            <div class="check_7">
+                <h4>노란색3</h4>
+            </div>
+            <div class="check_8">
+                <h4>노란색4</h4>
+            </div>
+            <div class="check_9">
+                <h4>초록색1</h4>
+            </div>
+            <div class="check_10">
+                <h4>초록색2</h4>
+            </div>
+            <div class="check_11">
+                <h4>초록색3</h4>
+            </div>
+            <div class="check_12">
+                <h4>초록색4</h4>
+            </div>
+            <div class="check_13">
+                <h4>파란색1</h4>
+            </div>
+            <div class="check_14">
+                <h4>파란색2</h4>
+            </div>
+            <div class="check_15">
+                <h4>파란색3</h4>
+            </div>
+            <div class="check_16">
+                <h4>파란색4</h4>
+            </div>
+            <button class="modal_x flexBox"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- <button class="sideBtn flexBox">
+        <i class="fas fa-times"></i>
+    </button> -->
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

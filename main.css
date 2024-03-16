@@ -1,0 +1,210 @@
+@font-face { 
+ font-family: 'GmarketSansMedium'; 
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+ font-weight: normal; 
+ font-style: normal; 
+ } 
+
+
+
+
+/* 기본세팅 */
+* { margin: 0px; padding: 0px; font-family: 'GmarketSansMedium'; box-sizing: border-box; } 
+ul, ol { list-style: none; } 
+a { text-decoration: none; color: #000; cursor: pointer; } 
+h5 {font-size: 22px;}
+
+
+/* flex 박스 */
+.flexBox { display: flex; justify-content: center; align-items: center; } 
+.justifyFlexBox { display: flex; justify-content: center; } 
+.alignFlexBox { display: flex; align-items: center; } 
+
+
+/* 모달 */
+.modal { position: fixed; top: 0px; left: 0px; width: 100%; height: 100vh; background-color: rgba(0,0,0,0.5); z-index: 11; display: none; } 
+.modal.showDetail,
+.modal.showCheck { display: block; animation: modalShow .5s; } 
+@keyframes modalShow { 
+ 0% { opacity: 0; } 
+ 100% { opacity: 1; } 
+ } 
+.modal>div { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 500px; background-color: #fff; border-radius: 30px; display: none; } 
+.modal.showDetail .detailBox { display: flex; flex-direction: column; justify-content: center; align-items: center; } 
+.modal.showDetail .detailBox h4 {font-size: 24px;}
+.modal.showCheck .checkBox { display: flex; flex-direction: column; justify-content: center; align-items: center; } 
+.modal [class^="detail_"],
+.modal [class^="check_"] { display: none; } 
+.modal .modalTitle { margin-bottom: 20px; } 
+.modal .modal_x { position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border: none; background-color: rgba(0, 0, 0, 0.5); border-radius: 100%; cursor: pointer; color: #fff; font-size: 20px; } 
+.modal .modal_x:hover { background-color: rgba(0, 0, 0, 0.7); } 
+
+
+
+/* 헤더 */
+header { width: 100%; position: relative; } 
+
+nav { width: 100%; background-color: #fff; z-index: 10; position: fixed; top: 0px; left: 50%; transform: translateX(-50%); height: 80px; } 
+nav .tab { width: 1280px; max-width: 1280px; justify-content: space-between; padding: 10px 0px; } 
+nav .logo { width: 100px; height: 50px; background-color: #EAD6C3; border-radius: 10px; color: #fff; font-size: 24px; } 
+nav .menu { list-style: none; display: flex; font-size: 22px; } 
+nav .list { padding-left: 80px; position: relative; } 
+nav .list>a:hover { color: #B49E8B; } 
+nav .list>a:hover::after { content: ''; width: 6px; height: 6px; border-radius: 100%; background-color: #B49E8B; display: inline-block; position: absolute; right: -8px; top: 3px; } 
+[class^="listMenu"] { position: absolute; top: 100%; right: 0px; font-size: 16px; margin-top: 15px; overflow: hidden; } 
+[class^="listMenu"] li { transition: all .3s; } 
+nav.active [class^="listMenu"] li { transform: translateY(0px); } 
+nav.active [class^="listMenu"] li>a:hover { color:#B49E8B } 
+[class^="listMenu"] li { margin-bottom: 10px; transform: translateY(-120px); } 
+nav .menu_bg { width: 100%; height: 200px; background-color: #fff; position: absolute; top: 0px; left: 0px; transition: all .3s; transform: translateY(-120px); z-index: -1; } 
+nav.active .menu_bg { transform: translateY(80px); } 
+
+
+/* 슬라이드 박스 */
+main.visual { width: 100%; height: calc(100vh - 80px); margin-top: 80px; overflow: hidden;} 
+main.visual .slideBox { width: 100%; height: 100%; position: relative; } 
+main.visual .slideMoveBox { width: 400%; height: 100%; display: flex; position: absolute; top: 0px; left: 0px; } 
+main.visual [class^="slide_"] { width: calc(100%/4); height: 100%; position: relative; } 
+main.visual .slide_1 { background: url(./img/main00.png) center/100% 100%; } 
+main.visual .slide_1 .textBox { position: absolute; top: 230px; right: 300px; } 
+main.visual .slide_2 { background: url(./img/main01.png) center/100% 100%; } 
+main.visual .slide_2 .textBox { position: absolute; top: 350px; left: 300px; } 
+main.visual .slide_3 { background: url(./img/main02.png) center/100% 100%; } 
+main.visual .slide_3 .textBox { position: absolute; top: 180px; left: 540px; } 
+main.visual .slide_4 { background: url(./img/main03.png) center/100% 100%; } 
+main.visual .slide_4 .textBox { position: absolute; top: 430px; right: 350px; } 
+main.visual .textBox h2 { opacity: 0; transform: translateY(30%); font-size: 60px; transition: 1s; } 
+main.visual .textBox.active h2 { animation: titleMove 1.3s; opacity: 1; transform: translateY(0px); } 
+@keyframes titleMove { 
+ 0% { opacity: 0; } 
+ 30% { opacity: 0; transform: translateY(30%); } 
+ 100% { opacity: 1; transform: translateY(0px); } 
+ } 
+main.visual .textBox p { opacity: 0; transform: translateY(200%); transition: 1s; } 
+main.visual .textBox.active p { animation: textMove 2s; opacity: 1; transform: translateY(0px); } 
+@keyframes textMove { 
+ 0% { opacity: 0; transform: translateY(200%); } 
+ 50% { opacity: 0; } 
+ 100% { opacity: 1; transform: translateY(0px); } 
+ } 
+main.visual .controlsBox { position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); display: flex; font-size: 22px; color: rgba(0, 0, 0, 0.5); } 
+main.visual .controlsBox span:nth-of-type(1) { font-weight: 800; } 
+main.visual .loadingBox { display: flex; width: 200px; height: 5px; background-color: rgba(0, 0, 0, 0.2); margin: 0px 15px; } 
+main.visual .loadingBar { width: 25%; height: 100%; background-color: #fff; } 
+main.visual [class$="Btn"] { width: 50px; height: 50px; margin-left: 15px; background: rgba(0, 0, 0, 0.5); border-radius: 100%; border: none; cursor: pointer; } 
+main.visual [class$="Btn"]:hover { background: rgba(0, 0, 0, 0.7); } 
+main.visual [class$="Btn"] i { color: #fff; font-size: 22px; } 
+main.visual .prevBtn i { margin-right: 3px; } 
+main.visual .nextBtn i { margin-left: 3px; } 
+
+
+/* 메인 컨텐츠 박스 */
+section.section01 { width: 100%; background-color: #FFF6EE; overflow: hidden; padding: 100px 0; } 
+section.section01 .content { width: 1080px; margin: 0px auto; } 
+section.section01 .contentSlideTitleBox::before,
+section.section01 .contentSlideTitleBox::after { content: ''; width: 445px; height: 3px; background: #EAD6C3; display: inline-block; } 
+section.section01 .contentSlideTitle { width: 150px; text-align: center; color: #B49E8B; font-weight: 800; font-size: 22px; margin: 0px 20px; } 
+section.section01 .contentClickMenu { width: 100%; gap: 30px; margin: 35px 0px 25px; } 
+section.section01 .contentClickMenu button { border: none; background-color: transparent; font-size: 18px; cursor: pointer; color: #B49E8B; width: 20%; height: 2.5rem; border-radius: 50px; border: 1px solid #EAD6C3; transition: all .5s; } 
+section.section01 .contentClickMenu button:hover { background-color: #E181A0; border-color: #E181A0; color: #fff; } 
+section.section01 .contentClickMenu button.choice { background-color: #E181A0; border-color: #E181A0; color: #fff; } 
+section.section01 .contentSlideBox { width: 100%; height: 500px; position: relative; overflow: hidden; } 
+section.section01 .contentMoveSlideBox { position: absolute; height: 100%; top: 0px; left: 0px; display: flex; } 
+section.section01 .contentMoveSlideBox>div { height: 100%; flex-direction: column; display: none; } 
+section.section01 .colorImg { width: 450px; height: 300px; border-radius: 30px; } 
+section.section01 .contentMoveSlideBox>div h5 { font-size: 22px; margin-top: 20px; } 
+section.section01 .contentMoveSlideBox>div.flexBox { display: flex; } 
+section.section01 .choiceBox { display: flex; margin-top: 10px; } 
+section.section01 .choiceBox button { border: none; background-color: #EAD6C3; border: 1px solid #EAD6C3; border-radius: 10px; transition: all .5s; padding: 10px 25px; font-size: 16px; color: #fff; cursor: pointer; } 
+section.section01 .choiceBox button:hover { background-color: transparent; border: 1px solid #B49E8B; color: #B49E8B; } 
+section.section01 .choiceBox button:nth-of-type(1) { margin-right: 10px; } 
+section.section01 .contentMoveSlideBox .red:nth-of-type(1) .colorImg { background-color: #FFDDE3; } 
+section.section01 .contentMoveSlideBox .red:nth-of-type(2) .colorImg { background-color: #fdabba; } 
+section.section01 .contentMoveSlideBox .red:nth-of-type(3) .colorImg { background-color: #fc6581; } 
+section.section01 .contentMoveSlideBox .red:nth-of-type(4) .colorImg { background-color: #fa3d5f; } 
+section.section01 .contentMoveSlideBox .yellow:nth-of-type(5) .colorImg { background-color: #F9F5B7; } 
+section.section01 .contentMoveSlideBox .yellow:nth-of-type(6) .colorImg { background-color: #faf288; } 
+section.section01 .contentMoveSlideBox .yellow:nth-of-type(7) .colorImg { background-color: #fcf15f; } 
+section.section01 .contentMoveSlideBox .yellow:nth-of-type(8) .colorImg { background-color: #fced26; } 
+section.section01 .contentMoveSlideBox .green:nth-of-type(9) .colorImg { background-color: #D8F2D8; } 
+section.section01 .contentMoveSlideBox .green:nth-of-type(10) .colorImg { background-color: #a5faa5; } 
+section.section01 .contentMoveSlideBox .green:nth-of-type(11) .colorImg { background-color: #67fa67; } 
+section.section01 .contentMoveSlideBox .green:nth-of-type(12) .colorImg { background-color: #38fd38; } 
+section.section01 .contentMoveSlideBox .blue:nth-of-type(13) .colorImg { background-color: #DBF0EF; } 
+section.section01 .contentMoveSlideBox .blue:nth-of-type(14) .colorImg { background-color: #b1fdf9; } 
+section.section01 .contentMoveSlideBox .blue:nth-of-type(15) .colorImg { background-color: #75f7f0; } 
+section.section01 .contentMoveSlideBox .blue:nth-of-type(16) .colorImg { background-color: #38fdf3; } 
+section.section01 [class^="contentBtn"] { width: 30px; height: 45px; background: url(./img/arrow.png); opacity: .5; position: absolute; top: 170px; border: none; pointer-events: none; } 
+section.section01 [class^="contentBtn"].able { opacity: 1; cursor: pointer; pointer-events: visible; } 
+section.section01 .contentBtnLeft { transform: scaleX(-1); left: 0px; } 
+section.section01 .contentBtnRight { right: 0px; } 
+
+
+/* 제품 박스 */
+section.productWrap { width: 100%; background-color: #FFF6EE; padding: 100px; } 
+section.productWrap .productBox { width: 80%; max-width: 1500px; height: 1000px; margin: 0px auto; background-color: rgb(234, 214, 195, 0.5); padding: 50px 50px 170px; border-radius: 30px; position: relative; } 
+section.productWrap .productColor { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; width: 1000px; height: 100%; margin: 0px auto; } 
+section.productWrap .productColor>li { border-radius: 30px; position: relative; } 
+section.productWrap .productColor>li>a { width: 100%; height: 100%; display: block; background-color: #fff; border-radius: 30px; box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1); } 
+section.productWrap .productMenuImg { position: absolute; bottom: 0px; left: 0px; width: 100%; height: 150px; padding: 15px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; } 
+section.productWrap .productMenuImg>li { border-radius: 15px; height: 120px; position: relative; } 
+section.productWrap .productMenuImg>li img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; } 
+section.productWrap .productMenuImg>li:nth-of-type(3) img { filter: brightness(0.5); } 
+section.productWrap .productMenuImg>li:nth-of-type(3)::after { content: '자세히보기'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%; color: #fff; text-align: center; } 
+section.productWrap [class^="productImg"] { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; border-radius: 30px; } 
+section.productWrap [class^="productImg"] img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.5); transition: all .5s; } 
+section.productWrap [class^="productImg"] p { position: absolute; top: 0px; left: 0px; color: #fff; padding: 50px 0 0 45px; } 
+section.productWrap [class^="productImg"] p>span { font-size: 22px; } 
+section.productWrap [class^="productImg"] p>span.num { padding: 5px 10px 3px; font-size: 16px; background-color: rgba(255, 255, 255, 0.25); border-radius: 30px; margin-top: 10px; width: fit-content; margin-top: 10px; } 
+section.productWrap [class^="productImg"]:hover img { transform: translateY(-70px); height: 80%; } 
+section.productWrap .num::before { content: '+'; margin-right: 3px; } 
+section.productWrap .characterImg { width: 300px; position: absolute; top: -120px; right: -120px; } 
+section.productWrap .bannerBar { width: 100%; border-radius: 100px; padding: 20px 40px 20px 150px; background-color: #fbb9bf; color: #fff; margin-top: 60px; position: relative; justify-content: space-between; } 
+section.productWrap .bannerBar img { position: absolute; bottom: 0px; left: 30px; width: 120px; } 
+section.productWrap .bannerBar button { border: none; background-color: transparent; cursor: pointer; font-size: 16px; position: relative; color: #fff; } 
+section.productWrap .bannerBar button::before { content: ''; height: 75%; width: 1px; background-color: #fff; position: absolute; left: -25px; top: 50%; transform: translateY(-50%); } 
+section.productWrap .bannerBar button:hover::after { content: ''; width: 100%; height: 1px; background-color: #fff; position: absolute; bottom: 0px; left: 0px; } 
+
+/* 푸터 */
+footer { width: 100%; background-color: #EAD6C3; padding: 2rem 100px; } 
+footer .inner { width: 80%; max-width: 1500px; margin: 0px auto; display: flex; justify-content: space-between; } 
+footer .footerLink { display: flex; margin-bottom: 20px; } 
+footer .footerLink li::after { content: ''; display: inline-block; margin: 0px 7px; width: 8px; height: 8px; background-color: #B49E8B; border-radius: 100%; } 
+footer .footerLink a:hover { border-bottom: 1px solid #000; } 
+footer .footerLink li:last-of-type::after { display: none; } 
+footer .footerInfo { color: #B49E8B; } 
+footer .footerInfo>li:nth-of-type(1)::after { content: ''; display: inline-block; width: 2px; height: 13px; background-color: #B49E8B; margin: 0px 7px; } 
+footer .footerRight ul { display: flex; } 
+footer [class^="icon"] { width: 31px; height: 31px; border: 1px solid #B49E8B; border-radius: 100%; margin-right: 10px; } 
+footer [class^="icon"] a { padding-top: 2px; } 
+footer [class^="icon"] i { color: #B49E8B; font-size: 14px; } 
+footer .siteMap { position: relative; overflow: hidden; } 
+footer .siteMap.on { overflow: visible; } 
+footer .siteMap button { padding: 5px 15px; position: relative; width: 150px; border: 1px solid #B49E8B; transition: .5s; border-radius: 100px; cursor: pointer; background-color: transparent; display: flex; justify-content: space-between; align-items: center; color: #B49E8B; background-color: #EAD6C3; } 
+footer .siteMap.on button,
+footer .siteMap:hover button { background-color: #fff; border-color: #B49E8B; } 
+footer .siteMap p { padding-top: 2px; } 
+footer .siteList { width: 100%; height: 0px; border: none; padding: 20px; position: absolute; bottom: 20px; left: 0px; transform: translateY(0%); border-radius: 20px 20px 0 0; } 
+footer .siteMap.on .siteList { height: auto; display: block; animation: siteListOn .5s; background-color: #fff; border: 1px solid #B49E8B; } 
+@keyframes siteListOn { 
+ 0% { transform: translateY(0%); height: 0px; } 
+ 30% {height: auto; display: block;}
+ 100% { height: auto; } 
+ } 
+footer .siteList ul { display: none; font-size: 14px; flex-direction: column; height: 0px; overflow-y: scroll; } 
+footer .siteMap.on .siteList ul { display: flex; height: 60px; animation: siteListUlOn .5s; } 
+@keyframes siteListUlOn { 
+ 0% { height: 0px; } 
+ 100% { height: 60px; } 
+ } 
+footer .siteList ul>li { margin-bottom: 5px; } 
+footer .siteList ul::-webkit-scrollbar { width: 7px; } 
+footer .siteList ul::-webkit-scrollbar-thumb { background-color: #EAD6C3; border-radius: 20px; } 
+footer .siteList ul::-webkit-scrollbar-track { background-color: #fff; } 
+
+
+/* 오른쪽 버튼 */
+.sideBtn { position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 45px; height: 60px; background-color: #B49E8B; border-radius: 100% 0 0 100%; border: none; box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.2); transition: all 0.3s cubic-bezier(.25,.8,.25,1); cursor: pointer; } 
+.sideBtn:hover { box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.3); } 
+.sideBtn.click { transform: translateX(45px) translateY(-50%); } 
+.sideBtn .fa-times { font-size: 22px; padding-left: 5px; color: #fff; } 
